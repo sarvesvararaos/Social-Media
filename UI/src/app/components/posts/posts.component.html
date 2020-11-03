@@ -1,3 +1,42 @@
+
+<div class="alert alert-white border border-info mt-2" role="alert">
+  <h5 class="alert-heading">All Posts <span class="float-right">{{username}}</span></h5>
+  <!-- <hr>
+  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p> -->
+</div>
+
+
+<div class="container border border-info">
+  <form class="" [formGroup]="postForm" (ngSubmit)="createPost()">
+    <div class="row d-flex justify-content-center " style="margin-left:5%;">
+      <div class="col-lg-5 pt-2">
+        <!-- <label for="exampleInputEmail1">Caption</label> -->
+        <input type="text" class="form-control" required formControlName="caption" aria-describedby="emailHelp" placeholder="Caption">
+      </div>
+      <div class="col-lg-5 pt-2">
+        <!-- <label for="exampleInputEmail1">Image Url</label> -->
+        <input type="url" class="form-control" required formControlName="imageUrl" aria-describedby="emailHelp" placeholder="Enter Your Post">
+      </div>
+      <div class="col-lg-2  pt-2 ">
+        <button class="btn btn-primary" [disabled]="!postForm.valid">Add Post</button>
+      </div>
+    </div>
+  </form>
+
+
+
+  <div class="row mt-2 justify-content-center" >
+    <div class="col test" >
+      <div class="card mt-3 ml-4" style="width: 15rem;" *ngFor="let post of userProfileObj.posts">
+        <img class="card-img-top" src="{{post.imageUrl}}" height="350px" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{post.caption}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <table class="table">
     <thead>
@@ -16,44 +55,5 @@
       </tr>
     </tbody>
   </table>
-</div>
-<div class="alert alert-success mt-4" role="alert">
-  <h4 class="alert-heading">All Posts <span class="float-right">{{username}}</span></h4>
-  <hr>
-  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-</div>
-
-
-<div class="container">
-  <form [formGroup]="postForm" (ngSubmit)="createPost()">
-    <div class="row d-flex justify-content-center">
-      <div class="col-lg-5">
-        <label for="exampleInputEmail1">Caption</label>
-        <input type="text" class="form-control" required formControlName="caption" aria-describedby="emailHelp" placeholder="Caption">
-      </div>
-      <div class="col-lg-5">
-        <label for="exampleInputEmail1">Image Url</label>
-        <input type="url" class="form-control" required formControlName="imageUrl" aria-describedby="emailHelp" placeholder="Enter Your Post">
-      </div>
-      <div class="col-lg-2 mt-4 pt-2 ">
-        <button class="btn btn-primary" [disabled]="!postForm.valid">Add Post</button>
-      </div>
-    </div>
-  </form>
-
-
-
-  <div class="row mt-2 justify-content-center" >
-    <div class="col " style="display:contents; ">
-      <div class="card mt-3 ml-4" style="width: 15rem;" *ngFor="let post of userProfileObj.posts">
-        <img class="card-img-top" src="{{post.imageUrl}}" height="350px" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{post.caption}}</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
 </div>
 

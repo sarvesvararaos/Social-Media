@@ -37,6 +37,7 @@ export class UserProfileComponent implements OnInit {
     this.userService.createUserProfile(userProfile).subscribe(result=>{
       this.userForm.controls["username"].reset();
       this.username = result.username;
+      // this.route.navigate([`create-post/${this.username}`]);
       this.isUsernameExists = true;
       console.log(result);
     },(error)=>{
@@ -48,4 +49,6 @@ export class UserProfileComponent implements OnInit {
     this.route.navigate([`create-post/${username}`]);
 
   }
+
+
 }

@@ -50,6 +50,7 @@ export class PostsComponent implements OnInit {
     this.userPost.caption = this.postForm.get("caption").value;
     this.userPost.imageUrl = this.postForm.get("imageUrl").value;
     this.postService.createPost(this.username,this.userPost).subscribe((result)=>{
+      this.ngOnInit()
       console.log(result)
     },error=>{
       console.log(error);

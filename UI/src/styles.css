@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background-color: rgba(var(--b3f,250,250,250),1);
+}
+
+.slick-next {
+  right: 8px !important ;
+}
+
+.slick-prev {
+  left: 8px !important;
+}
+
+.slick-prev:before, .slick-next:before {
+  opacity: 100 !important;
+  color: #6f6d6d !important;
+}
+
+.carousel{
+  margin: auto;
+  background-color: white;
+  height: 80px;
+  border: 1px solid rgba(var(--b6a,219,219,219),1);
+  border-radius: 3px;
+}
+
+.slide {
+width: 120px !important;
+margin: auto !important;
+padding-left: 5% !important;
+}
+
+

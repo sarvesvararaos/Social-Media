@@ -1,0 +1,19 @@
+.test{
+  display: flex;
+  flex-wrap: inherit;
+  justify-content: flex-start;
+
+}
+
+@media screen and (max-width: 738px) {
+ .test{
+   justify-content: center;
+ }
+}
+
+
+@media screen and (max-width: 1020px) {
+  .test{
+    margin-left: 5%;
+  }
+ }
